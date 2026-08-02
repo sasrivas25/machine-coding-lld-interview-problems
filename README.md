@@ -1,8 +1,8 @@
 # Machine Coding, LLD, FDE & Production-Incident Interview Problems
 
-A collection of 75 real-world backend engineering interview problems — machine coding & low-level design (LLD), repository-based tasks, forward-deployed-engineer (FDE) / integration rounds, AI-researcher & data-pipeline bugs, and production-incident debugging. Each is written the way the round actually plays out: you inherit a service that mostly works, the requirements say what correct looks like, and the edge cases are where the grading happens. Statements only — bring your own language and implementation.
+A collection of 100 real-world backend engineering interview problems — machine coding & low-level design (LLD), repository-based tasks, database engineering, runtime diagnostics, forward-deployed-engineer (FDE) / integration rounds, AI-researcher & data-pipeline bugs, and production-incident debugging. Each is written the way the round actually plays out: you inherit a service that mostly works, the requirements say what correct looks like, and the edge cases are where the grading happens. Statements only — bring your own language and implementation.
 
-Every problem here can also be practiced against a **real repository with a failing test suite**, free, at **[gronex.org](https://gronex.org)** — solve it in the browser workspace or download the starter repo and run the bundled verify script in Java, Python, or C++.
+Every problem here can also be practiced against a **real repository with a failing test suite** at **[gronex.org](https://gronex.org)** — solve it in the browser workspace or download the starter repo and run the bundled verify script in Java, Python, C++, or Node.js.
 
 ## Repository implementation — LLD & machine coding
 
@@ -58,6 +58,21 @@ Every problem here can also be practiced against a **real repository with a fail
 | [Ride Booking Driver Assignment Race Resolution System](problems/ride-booking-driver-assignment-race-resolution-system.md) | Hard | assignment races, ordered locking |
 | [Shared Calendar Slot Booking System](problems/calendar-booking.md) | Hard | multi-resource locking, deadlock prevention |
 
+## Database engineering
+
+| Problem | Difficulty | Core topic |
+| --- | --- | --- |
+| [CDC Search Index Synchronization](problems/cdc-search-index-synchronization.md) | Hard | CDC ordering, idempotent projections |
+| [Connection Pool Exhausts After Failed Requests](problems/database-connection-pool-exhaustion.md) | Hard | connection lifecycle, transaction cleanup |
+| [Database Overload Under a Traffic Spike](problems/database-overload-traffic-spike.md) | Hard | indexing, query planning, N+1 queries |
+| [One Tenant's Volume Slows Every Tenant](problems/hot-partition-multi-tenant-database.md) | Hard | partition pruning, tenant isolation |
+| [Inventory Overselling Under Concurrency](problems/inventory-overselling-under-concurrency.md) | Hard | row locking, idempotent reservations |
+| [Catalog Pagination Skips and Repeats Products](problems/large-table-pagination-failure.md) | Hard | keyset pagination, composite indexes |
+| [Payment Ledger Consistency](problems/payment-ledger-consistency.md) | Hard | double-entry accounting, atomic refunds |
+| [Read Replica Serves Stale Data After a Write](problems/read-replica-consistency-failure.md) | Hard | read-after-write consistency, routing |
+| [Outbox Publishes Phantom and Duplicate Events](problems/transactional-outbox-implementation.md) | Hard | transactional outbox, concurrent publishers |
+| [Zero-Downtime Column Split Loses Rows](problems/zero-downtime-database-migration.md) | Hard | expand-contract migration, online backfill |
+
 ## Architecture extension
 
 | Problem | Difficulty | Core topic |
@@ -92,6 +107,26 @@ Every problem here can also be practiced against a **real repository with a fail
 | [Airflow Revenue DAG: Early Publish and Retry Inflation](problems/airflow-dag-dependency-and-idempotent-load.md) | Hard | DAG dependencies, idempotent load |
 | [Incident Debugging: Late CDC Corrupts a Customer Snapshot](problems/incremental-cdc-merge-late-arriving-data.md) | Hard | CDC merge, late-arriving data |
 | [Incident Debugging: Ledger Transfers Freeze in Production](problems/incident-lock-ordering-deadlock-debugging.md) | Hard | lock ordering, deadlock |
+
+## Runtime diagnostics — heap, threads & garbage collection
+
+| Problem | Difficulty | Core topic |
+| --- | --- | --- |
+| [Allocation Rate Explosion in a Telemetry Hot Path](problems/allocation-rate-explosion-in-hot-path.md) | Hard | allocation profiling, defensive copying |
+| [Coarse Lock Convoy in a Shared Registry](problems/coarse-lock-convoy-in-shared-registry.md) | Hard | lock convoy, read-path concurrency |
+| [Event Listener Registration Leak](problems/event-listener-registration-leak.md) | Hard | heap retention, listener lifecycle |
+| [Finalizer and Cleaner Backlog](problems/finalizer-cleaner-backlog.md) | Hard | deterministic resource release |
+| [Full Result Materialization Heap Spike](problems/full-result-materialization-heap-spike.md) | Hard | streaming, bounded memory |
+| [Humongous Allocation Region Pressure](problems/humongous-allocation-region-pressure.md) | Hard | large objects, chunked processing |
+| [Lock Leaked on an Exception Path](problems/lock-leaked-on-exception-path.md) | Hard | exception safety, critical sections |
+| [Lock-Ordering Deadlock in a Transfer Path](problems/lock-ordering-deadlock-in-transfer-path.md) | Hard | thread dumps, global lock ordering |
+| [Missed Signal in a Handoff Queue](problems/missed-signal-lost-wakeup-queue.md) | Hard | condition variables, shutdown |
+| [Off-Heap Buffer Churn and Full-GC Storm](problems/offheap-buffer-churn-full-gc-storm.md) | Hard | buffer pooling, explicit collection |
+| [Rule Bundle Reloads Retain Previous Generations](problems/plugin-reload-classloader-leak.md) | Hard | classloader lifecycle, hot reload |
+| [Premature Promotion and Survivor Overflow](problems/premature-promotion-survivor-overflow.md) | Hard | object lifetime, generational GC |
+| [Thread-Local Retention in Pooled Workers](problems/thread-local-retention-in-pooled-workers.md) | Hard | thread-local cleanup, worker pools |
+| [Thread-Pool Starvation from Nested Tasks](problems/thread-pool-starvation-nested-tasks.md) | Hard | pool starvation, task decomposition |
+| [Unbounded Cache Heap Exhaustion](problems/unbounded-cache-heap-exhaustion.md) | Hard | cache eviction, retained heap |
 
 ## Debugging & bug fixes — data / ML / backend
 
