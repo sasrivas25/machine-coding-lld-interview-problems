@@ -1,6 +1,6 @@
 # Machine Coding, LLD, FDE & Production-Incident Interview Problems
 
-A collection of 75 real-world backend engineering interview problems — machine coding & low-level design (LLD), repository-based tasks, forward-deployed-engineer (FDE) / integration rounds, AI-researcher & data-pipeline bugs, and production-incident debugging. Each is written the way the round actually plays out: you inherit a service that mostly works, the requirements say what correct looks like, and the edge cases are where the grading happens. Statements only — bring your own language and implementation.
+A collection of 130 real-world backend engineering interview problems — machine coding & low-level design (LLD), repository-based tasks, distributed-systems failure modes, runtime diagnostics (GC, heap and thread dumps), database engineering, forward-deployed-engineer (FDE) / integration rounds, AI-researcher & data-pipeline bugs, and production-incident debugging. Each is written the way the round actually plays out: you inherit a service that mostly works, the requirements say what correct looks like, and the edge cases are where the grading happens. Statements only — bring your own language and implementation.
 
 Every problem here can also be practiced against a **real repository with a failing test suite**, free, at **[gronex.org](https://gronex.org)** — solve it in the browser workspace or download the starter repo and run the bundled verify script in Java, Python, or C++.
 
@@ -57,6 +57,77 @@ Every problem here can also be practiced against a **real repository with a fail
 | [Message Queue Consumer: Idempotency, Retries, DLQ](problems/queue-consumer.md) | Hard | at-least-once delivery, exactly-once effects |
 | [Ride Booking Driver Assignment Race Resolution System](problems/ride-booking-driver-assignment-race-resolution-system.md) | Hard | assignment races, ordered locking |
 | [Shared Calendar Slot Booking System](problems/calendar-booking.md) | Hard | multi-resource locking, deadlock prevention |
+
+## Distributed systems — delivery, coordination & flow control
+
+| Problem | Difficulty | Core topic |
+| --- | --- | --- |
+| [A Paged Export Is Silently Returning a Third of the Orders](problems/cross-shard-paging-loses-boundary-rows.md) | Hard | cross-shard pagination, merge boundaries |
+| [A Read Returned Data the Cluster Had Already Replaced](problems/quorum-read-without-repair.md) | Hard | quorum reads, read repair |
+| [A Slow Origin Received Thirty Times the Traffic It Should Have](problems/cache-stampede-on-key-expiry.md) | Hard | cache stampede, request coalescing |
+| [A Slow Replica Turns Into a Fleet-Wide Overload](problems/hedged-requests-amplify-load.md) | Hard | hedged requests, load amplification |
+| [A Stalled Writer Overwrote the New One](problems/expired-lease-write-after-pause.md) | Hard | leases, fencing, pause tolerance |
+| [A Struggling Dependency Received Three Times Its Normal Load](problems/retry-storm-amplifies-outage.md) | Hard | retry budgets, backoff, failure classification |
+| [Account Updates Land Out of Order Under Load](problems/ordering-broken-by-parallel-consumers.md) | Hard | per-key ordering, parallel dispatch |
+| [Cache Hit Rate Collapses Every Time a Node Is Added](problems/key-remapping-on-cluster-resize.md) | Hard | consistent hashing, membership change cost |
+| [Duplicate Charges After a Consumer Restart](problems/at-least-once-duplicate-side-effects.md) | Hard | at-least-once delivery, idempotent side effects |
+| [Fulfilment Could Not See the Order That Triggered It](problems/causal-consistency-lost-across-services.md) | Hard | causal consistency, replica read routing |
+| [Healthy Nodes Keep Getting Thrown Out of the Fleet](problems/heartbeat-flapping-evicts-healthy-nodes.md) | Hard | failure detection, membership stability |
+| [Indexing Latency Grew Without Bound During a Worker Slowdown](problems/missing-backpressure-unbounded-queue.md) | Hard | backpressure, admission control |
+| [Jobs Vanish Whenever a Worker Joins or Leaves](problems/rebalance-without-handoff-drops-in-flight-work.md) | Hard | rebalancing, in-flight work handoff |
+| [One Bad Record Freezes a Partition](problems/poison-message-blocks-partition.md) | Hard | poison messages, retry budgets, dead-lettering |
+| [One Dependency Never Got Cut Off, Another Never Got Restored](problems/circuit-breaker-never-opens.md) | Hard | circuit breakers, state transitions, recovery |
+| [One Node's Writes Started Winning Every Conflict](problems/clock-skew-breaks-conflict-resolution.md) | Hard | logical clocks, conflict resolution, replication |
+| [One Slow Consumer Is Holding Up Every Other Consumer](problems/slow-subscriber-stalls-broadcast.md) | Hard | fan-out isolation, per-subscriber queues |
+| [One Slow Dependency Made Every Dependency Slow](problems/shared-pool-head-of-line-blocking.md) | Hard | bulkheads, resource isolation |
+| [Replayed Updates Roll Accounts Back to Old Values](problems/dlq-replay-reorders-live-stream.md) | Hard | replay ordering, state convergence |
+| [Report Exports Are Pushing Checkouts Off the Gateway](problems/admission-ignores-request-class.md) | Hard | admission control, flow control by request class |
+| [Requests Ran Far Past the Deadline the Caller Was Waiting On](problems/cascading-timeout-budget-exhaustion.md) | Hard | deadline propagation, timeout budgets |
+| [Row Locks Are Never Released After a Coordinator Restart](problems/two-phase-commit-blocks-on-coordinator-loss.md) | Hard | two-phase commit, cooperative termination |
+| [Search Reported Complete Results While Two Shards Were Refusing Requests](problems/scatter-gather-partial-failure-masked.md) | Hard | partial failure, fan-out completeness |
+| [Settlements Vanish After a Consumer Restart](problems/offset-committed-before-processing.md) | Hard | commit ordering, exactly-once effects |
+| [Some Ledger Records Never Reach the Ledger](problems/batch-ack-hides-record-failures.md) | Hard | per-record acknowledgement, failure accounting |
+| [Stale Inventory After a Delivery Reordering](problems/out-of-order-event-application.md) | Hard | version-aware projections, monotonic state |
+| [Tenants Are Allowed Four Times Their Contracted Rate](problems/distributed-rate-limit-drifts-per-node.md) | Hard | distributed rate limiting, shared quota state |
+| [Two Edge Nodes Served a Feature Flag That Had Been Changed Ten Minutes Earlier](problems/stale-cache-after-cross-node-invalidation.md) | Hard | cache invalidation, generation checks |
+| [Two Nodes Ran the Same Schedule](problems/split-brain-under-network-partition.md) | Hard | leader election, quorum, fencing by term |
+| [Two Workers Render the Same Document at Once](problems/visibility-timeout-shorter-than-handler.md) | Hard | visibility timeouts, lease renewal |
+
+## Runtime diagnostics — GC, heap & thread dumps
+
+| Problem | Difficulty | Core topic |
+| --- | --- | --- |
+| [Allocation Rate Explosion in a Telemetry Hot Path](problems/allocation-rate-explosion-in-hot-path.md) | Hard | allocation rate, defensive copying, hot paths |
+| [Coarse Lock Convoy in a Shared Registry](problems/coarse-lock-convoy-in-shared-registry.md) | Hard | lock granularity, read concurrency, convoys |
+| [Event Listener Registration Leak in a Collaboration Server](problems/event-listener-registration-leak.md) | Hard | listener lifecycle, heap-dump analysis |
+| [Finalizer and Cleaner Backlog in a Scratch File Service](problems/finalizer-cleaner-backlog.md) | Hard | deterministic resource release, native handles |
+| [Full Result Materialization Heap Spike](problems/full-result-materialization-heap-spike.md) | Hard | streaming, bounded peak memory |
+| [Humongous Allocation Region Pressure](problems/humongous-allocation-region-pressure.md) | Hard | allocation shape, large-object thresholds, chunking |
+| [Lock Leaked on the Exception Path](problems/lock-leaked-on-exception-path.md) | Hard | critical sections, exception safety, thread dumps |
+| [Lock Ordering Deadlock in the Transfer Path](problems/lock-ordering-deadlock-in-transfer-path.md) | Hard | deadlock, lock ordering, concurrency |
+| [Missed Signal in a Handoff Queue](problems/missed-signal-lost-wakeup-queue.md) | Hard | condition variables, lost wakeups, shutdown |
+| [Off-Heap Buffer Churn and the Full GC Storm](problems/offheap-buffer-churn-full-gc-storm.md) | Hard | off-heap memory, buffer pooling, explicit collection |
+| [Premature Promotion and Survivor Overflow in a Batch Rollup](problems/premature-promotion-survivor-overflow.md) | Hard | generational GC, object lifetime, working-set shape |
+| [Rule Bundle Reloads Never Release the Previous Generation](problems/plugin-reload-classloader-leak.md) | Hard | hot-reload lifecycle, generation retention |
+| [Thread Pool Starvation from Nested Task Submission](problems/thread-pool-starvation-nested-tasks.md) | Hard | pool starvation, task decomposition, blocking waits |
+| [Thread-Local Retention in Pooled Workers](problems/thread-local-retention-in-pooled-workers.md) | Hard | thread-local lifecycle, worker pools |
+| [Unbounded Cache Heap Exhaustion](problems/unbounded-cache-heap-exhaustion.md) | Hard | retention, cache eviction, heap analysis |
+
+## Database engineering
+
+| Problem | Difficulty | Core topic |
+| --- | --- | --- |
+| [CDC Search Index Synchronization](problems/cdc-search-index-synchronization.md) | Hard | change data capture, transaction visibility, idempotent projections |
+| [Catalog Pagination Skips and Repeats Products](problems/large-table-pagination-failure.md) | Hard | keyset pagination, stable cursors |
+| [Connection Pool Exhausts After Failed Requests](problems/database-connection-pool-exhaustion.md) | Hard | resource lifecycle, error paths, transaction hygiene |
+| [Database Overload Under a Traffic Spike](problems/database-overload-traffic-spike.md) | Hard | indexing, bounded query work, N+1 |
+| [Inventory Overselling Under Concurrency](problems/inventory-overselling-under-concurrency.md) | Hard | atomic reservation, idempotency, hold expiry |
+| [One Tenant's Volume Slows Every Tenant](problems/hot-partition-multi-tenant-database.md) | Hard | partition pruning, tenant isolation |
+| [Outbox Publishes Phantom and Duplicate Events](problems/transactional-outbox-implementation.md) | Hard | transactional outbox, exactly-once delivery |
+| [Payment Ledger Consistency Under Refunds](problems/payment-ledger-consistency.md) | Hard | transactional atomicity, double-entry ledgers |
+| [Read Replica Serves Stale Data After a Write](problems/read-replica-consistency-failure.md) | Hard | read-after-write consistency, replica routing |
+| [Zero-Downtime Column Split Loses Rows](problems/zero-downtime-database-migration.md) | Hard | expand-contract migration, resumable backfill |
+
 
 ## Architecture extension
 
