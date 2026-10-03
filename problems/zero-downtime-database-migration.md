@@ -32,4 +32,4 @@ Whether you apply expand–migrate–contract discipline: make the application f
 
 ---
 
-Practice this in a real repo with a failing test suite → https://gronex.org/problems/zero-downtime-database-migration
+Practice this in a real repo with a failing test suite → https://gronex.org/zero-downtime-database-migration-coding-problem

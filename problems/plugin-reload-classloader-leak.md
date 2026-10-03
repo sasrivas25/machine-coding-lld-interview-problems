@@ -32,4 +32,4 @@ Whether you trace the oldest retained rule back to the owning registry and clean
 
 ---
 
-Practice this in a real repo with a failing test suite → https://gronex.org/problems/plugin-reload-classloader-leak
+Practice this in a real repo with a failing test suite → https://gronex.org/plugin-reload-classloader-leak-coding-problem

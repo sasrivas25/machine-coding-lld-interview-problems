@@ -32,4 +32,4 @@ Whether you move limiting and aggregation into the database, remove the N+1 loop
 
 ---
 
-Practice this in a real repo with a failing test suite → https://gronex.org/problems/database-overload-traffic-spike
+Practice this in a real repo with a failing test suite → https://gronex.org/database-overload-traffic-spike-coding-problem

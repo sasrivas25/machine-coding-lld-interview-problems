@@ -32,4 +32,4 @@ Whether you distinguish retention from leakage and remove eager materialization.
 
 ---
 
-Practice this in a real repo with a failing test suite → https://gronex.org/problems/full-result-materialization-heap-spike
+Practice this in a real repo with a failing test suite → https://gronex.org/full-result-materialization-heap-spike-coding-problem

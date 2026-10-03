@@ -32,4 +32,4 @@ Whether you track a per-session high-water mark and compare it with replica prog
 
 ---
 
-Practice this in a real repo with a failing test suite → https://gronex.org/problems/read-replica-consistency-failure
+Practice this in a real repo with a failing test suite → https://gronex.org/read-replica-consistency-failure-coding-problem

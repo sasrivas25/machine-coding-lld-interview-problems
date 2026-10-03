@@ -32,4 +32,4 @@ Whether you follow the heap's retaining path to the long-lived publisher and tre
 
 ---
 
-Practice this in a real repo with a failing test suite → https://gronex.org/problems/event-listener-registration-leak
+Practice this in a real repo with a failing test suite → https://gronex.org/event-listener-registration-leak-coding-problem

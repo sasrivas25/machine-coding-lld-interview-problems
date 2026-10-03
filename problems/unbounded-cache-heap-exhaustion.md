@@ -32,4 +32,4 @@ Whether you use the heap evidence to identify the retaining containers and enfor
 
 ---
 
-Practice this in a real repo with a failing test suite → https://gronex.org/problems/unbounded-cache-heap-exhaustion
+Practice this in a real repo with a failing test suite → https://gronex.org/unbounded-cache-heap-exhaustion-coding-problem

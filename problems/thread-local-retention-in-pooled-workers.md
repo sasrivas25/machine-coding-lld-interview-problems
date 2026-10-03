@@ -32,4 +32,4 @@ Whether you recognize that thread-local lifetime follows the worker, not the req
 
 ---
 
-Practice this in a real repo with a failing test suite → https://gronex.org/problems/thread-local-retention-in-pooled-workers
+Practice this in a real repo with a failing test suite → https://gronex.org/thread-local-retention-in-pooled-workers-coding-problem

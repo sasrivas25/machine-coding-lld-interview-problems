@@ -32,4 +32,4 @@ Whether correctness is enforced at the database boundary with transactions, row-
 
 ---
 
-Practice this in a real repo with a failing test suite → https://gronex.org/problems/inventory-overselling-under-concurrency
+Practice this in a real repo with a failing test suite → https://gronex.org/inventory-overselling-under-concurrency-coding-problem

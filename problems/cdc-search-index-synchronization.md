@@ -32,4 +32,4 @@ Whether you understand that PostgreSQL sequences are not commit-order clocks. St
 
 ---
 
-Practice this in a real repo with a failing test suite → https://gronex.org/problems/cdc-search-index-synchronization
+Practice this in a real repo with a failing test suite → https://gronex.org/cdc-search-index-synchronization-coding-problem

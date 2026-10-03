@@ -32,4 +32,4 @@ Whether connection ownership is expressed with scope-bound cleanup—`finally`, 
 
 ---
 
-Practice this in a real repo with a failing test suite → https://gronex.org/problems/database-connection-pool-exhaustion
+Practice this in a real repo with a failing test suite → https://gronex.org/database-connection-pool-exhaustion-coding-problem

@@ -32,4 +32,4 @@ Whether you distinguish allocation churn from a leak and use allocation-site evi
 
 ---
 
-Practice this in a real repo with a failing test suite → https://gronex.org/problems/allocation-rate-explosion-in-hot-path
+Practice this in a real repo with a failing test suite → https://gronex.org/allocation-rate-explosion-in-hot-path-coding-problem

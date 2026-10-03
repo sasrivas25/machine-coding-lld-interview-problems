@@ -32,4 +32,4 @@ Whether you use the dump to identify contention rather than deadlock and reduce 
 
 ---
 
-Practice this in a real repo with a failing test suite → https://gronex.org/problems/coarse-lock-convoy-in-shared-registry
+Practice this in a real repo with a failing test suite → https://gronex.org/coarse-lock-convoy-in-shared-registry-coding-problem

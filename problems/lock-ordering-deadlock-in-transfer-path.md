@@ -32,4 +32,4 @@ Whether you derive a stable global order from account identity, acquire both loc
 
 ---
 
-Practice this in a real repo with a failing test suite → https://gronex.org/problems/lock-ordering-deadlock-in-transfer-path
+Practice this in a real repo with a failing test suite → https://gronex.org/lock-ordering-deadlock-in-transfer-path-coding-problem
