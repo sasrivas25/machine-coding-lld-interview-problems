@@ -32,4 +32,4 @@ Whether you treat file handles as scope-owned resources and use try-with-resourc
 
 ---
 
-Practice this in a real repo with a failing test suite → https://gronex.org/problems/finalizer-cleaner-backlog
+Practice this in a real repo with a failing test suite → https://gronex.org/finalizer-cleaner-backlog-coding-problem

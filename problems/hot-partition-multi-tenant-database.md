@@ -32,4 +32,4 @@ Whether you inspect the execution path and understand partition pruning rather t
 
 ---
 
-Practice this in a real repo with a failing test suite → https://gronex.org/problems/hot-partition-multi-tenant-database
+Practice this in a real repo with a failing test suite → https://gronex.org/hot-partition-multi-tenant-database-coding-problem

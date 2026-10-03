@@ -32,4 +32,4 @@ Whether you use the database as the coordination boundary: atomic outbox inserti
 
 ---
 
-Practice this in a real repo with a failing test suite → https://gronex.org/problems/transactional-outbox-implementation
+Practice this in a real repo with a failing test suite → https://gronex.org/transactional-outbox-implementation-coding-problem

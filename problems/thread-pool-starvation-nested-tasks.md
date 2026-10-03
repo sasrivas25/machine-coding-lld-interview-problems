@@ -32,4 +32,4 @@ Whether you identify thread-pool starvation from the dump and flatten task owner
 
 ---
 
-Practice this in a real repo with a failing test suite → https://gronex.org/problems/thread-pool-starvation-nested-tasks
+Practice this in a real repo with a failing test suite → https://gronex.org/thread-pool-starvation-nested-tasks-coding-problem

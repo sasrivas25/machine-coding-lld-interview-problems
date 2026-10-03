@@ -32,4 +32,4 @@ Whether you understand that condition notifications are not queued permits. Corr
 
 ---
 
-Practice this in a real repo with a failing test suite → https://gronex.org/problems/missed-signal-lost-wakeup-queue
+Practice this in a real repo with a failing test suite → https://gronex.org/missed-signal-lost-wakeup-queue-coding-problem

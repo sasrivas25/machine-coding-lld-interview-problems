@@ -32,4 +32,4 @@ Whether you solve both halves: bounded pooling and deterministic release. GC is 
 
 ---
 
-Practice this in a real repo with a failing test suite → https://gronex.org/problems/offheap-buffer-churn-full-gc-storm
+Practice this in a real repo with a failing test suite → https://gronex.org/offheap-buffer-churn-full-gc-storm-coding-problem

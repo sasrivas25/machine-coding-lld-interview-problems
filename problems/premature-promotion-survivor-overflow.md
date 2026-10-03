@@ -32,4 +32,4 @@ Whether you interpret rising survivor occupancy as an object-lifetime problem an
 
 ---
 
-Practice this in a real repo with a failing test suite → https://gronex.org/problems/premature-promotion-survivor-overflow
+Practice this in a real repo with a failing test suite → https://gronex.org/premature-promotion-survivor-overflow-coding-problem

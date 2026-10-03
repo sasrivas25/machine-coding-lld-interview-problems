@@ -32,4 +32,4 @@ Whether you connect the dump to exception-unsafe lock ownership and replace pair
 
 ---
 
-Practice this in a real repo with a failing test suite → https://gronex.org/problems/lock-leaked-on-exception-path
+Practice this in a real repo with a failing test suite → https://gronex.org/lock-leaked-on-exception-path-coding-problem

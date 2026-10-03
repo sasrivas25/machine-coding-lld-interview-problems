@@ -32,4 +32,4 @@ Whether you identify the accounting invariants, lock the authoritative payment s
 
 ---
 
-Practice this in a real repo with a failing test suite → https://gronex.org/problems/payment-ledger-consistency
+Practice this in a real repo with a failing test suite → https://gronex.org/payment-ledger-consistency-coding-problem

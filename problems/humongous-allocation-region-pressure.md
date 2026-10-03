@@ -32,4 +32,4 @@ Whether you read the collector reason and reshape the algorithm instead of tunin
 
 ---
 
-Practice this in a real repo with a failing test suite → https://gronex.org/problems/humongous-allocation-region-pressure
+Practice this in a real repo with a failing test suite → https://gronex.org/humongous-allocation-region-pressure-coding-problem

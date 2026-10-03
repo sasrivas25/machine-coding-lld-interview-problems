@@ -32,4 +32,4 @@ Whether you define a total ordering such as `(published_at, id)`, encode both va
 
 ---
 
-Practice this in a real repo with a failing test suite → https://gronex.org/problems/large-table-pagination-failure
+Practice this in a real repo with a failing test suite → https://gronex.org/large-table-pagination-failure-coding-problem
