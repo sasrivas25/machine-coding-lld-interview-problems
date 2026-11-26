@@ -1,6 +1,6 @@
 # Machine Coding, LLD, FDE & Production-Incident Interview Problems
 
-A collection of 130 real-world backend engineering interview problems — machine coding & low-level design (LLD), repository-based tasks, distributed systems, database engineering, runtime diagnostics, forward-deployed-engineer (FDE) / integration rounds, AI-researcher & data-pipeline bugs, and production-incident debugging. Each is written the way the round actually plays out: you inherit a service that mostly works, the requirements say what correct looks like, and the edge cases are where the grading happens. Statements only — bring your own language and implementation.
+A collection of 133 real-world backend engineering interview problems — machine coding & low-level design (LLD), repository-based tasks, distributed systems, database engineering, runtime diagnostics, forward-deployed-engineer (FDE) / integration rounds, AI-researcher & data-pipeline bugs, and production-incident debugging. Each is written the way the round actually plays out: you inherit a service that mostly works, the requirements say what correct looks like, and the edge cases are where the grading happens. Statements only — bring your own language and implementation.
 
 Every problem here can also be practiced against a **real repository with a failing test suite** at **[gronex.org](https://gronex.org)** — solve it in the browser workspace or download the starter repo and run the bundled verify script in Java, Python, C++, or Node.js.
 
@@ -9,6 +9,7 @@ Every problem here can also be practiced against a **real repository with a fail
 | Problem | Difficulty | Core topic |
 | --- | --- | --- |
 | [Food Delivery Order Status Tracker](problems/order-status-tracker.md) | Easy | state machines |
+| [Parking Garage Billing](problems/parking-garage-billing.md) | Easy | tariff rules, time calculations |
 | [CMS Article Publishing and Versioning Workflow](problems/cms-article-publishing-and-versioning-workflow.md) | Medium | versioning, optimistic locking |
 | [CRM Lead Assignment and Escalation System](problems/crm-lead-assignment-and-escalation-system.md) | Medium | assignment, load balancing |
 | [Course Enrollment and Progress Tracker](problems/course-enrollment-and-progress-tracker.md) | Medium | progress tracking, one-time side effects |
@@ -116,6 +117,7 @@ Every problem here can also be practiced against a **real repository with a fail
 | [Job Queue: Delayed Jobs & Priority Ordering](problems/job-queue-delayed-and-priority-extension.md) | Medium | scheduling, priority queue |
 | [Rate Limiter: Sliding-Window Algorithm & Per-Tier Limits](problems/rate-limiter-sliding-window-and-tiers-extension.md) | Medium | rate limiting, sliding window |
 | [Resumable Multipart Upload](problems/resumable-multipart-upload-extension.md) | Hard | multipart upload, dedup |
+| [Shipping Quote Engine Extension](problems/shipping-quote-engine-extension.md) | Hard | zone pricing, backward compatibility |
 
 ## API contract debugging — FDE / integrations
 
@@ -141,6 +143,7 @@ Every problem here can also be practiced against a **real repository with a fail
 | [API Client Pagination and Retry](problems/api-client-pagination-and-retry.md) | Hard | paginated sync, retry idempotency |
 | [Airflow Revenue DAG: Early Publish and Retry Inflation](problems/airflow-dag-dependency-and-idempotent-load.md) | Hard | DAG dependencies, idempotent load |
 | [Incident Debugging: Late CDC Corrupts a Customer Snapshot](problems/incremental-cdc-merge-late-arriving-data.md) | Hard | CDC merge, late-arriving data |
+| [Incident Debugging: Black Friday 503s](problems/black-friday-503s-incident.md) | Hard | Postgres MVCC, load shedding |
 | [Incident Debugging: Ledger Transfers Freeze in Production](problems/incident-lock-ordering-deadlock-debugging.md) | Hard | lock ordering, deadlock |
 
 ## Runtime diagnostics — heap, threads & garbage collection
