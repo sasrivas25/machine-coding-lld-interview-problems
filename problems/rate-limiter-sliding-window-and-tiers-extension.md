@@ -18,6 +18,8 @@ Your job is to extend the limiter without breaking the existing fixed-window beh
 - Support configurable tiers such as `{"free": (5, 10), "pro": (100, 10)}` via `allow_tier(key, tier, now)`.
 - Count each tier independently per key, with keys independent of one another.
 - Treat an unknown tier as an error.
+- A request at time `t` counts until, but not including, `t + window_seconds`; rejected requests are not recorded; a limit of `0` rejects everything.
+- Each tier uses its own window, under either algorithm, and two tiers with equal limits are still separate budgets.
 
 ## Edge cases to handle
 
